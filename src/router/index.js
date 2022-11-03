@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-Vue.use(Router)
-
 /* Layout */
 import Layout from '@/layout'
 
@@ -11,6 +8,8 @@ import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
+
+Vue.use(Router)
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -129,6 +128,35 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
+  {
+    path: '/yygh/hospset',
+    component: Layout,
+    redirect: '/yygh/hospset/list',
+    name: 'hospset',
+    meta: { title: '医院设置管理', icon: 'el-icon-s-management' },
+    children: [
+      {
+        path: 'list',
+        name: 'HospSetList',
+        component: () => import('@/views/yygh/hospset/list'),
+        meta: { title: '医院设置列表', icon: 'el-icon-search' }
+      },
+      {
+        path: 'create',
+        name: 'HospSetCreate',
+        component: () => import('@/views/yygh/hospset/form'),
+        meta: { title: '开通医院设置', icon: 'el-icon-finished' }
+      },
+      // hidden: true  隐藏路由
+      {
+        path: 'edit/:id',
+        name: 'HospSetEdit',
+        component: () => import('@/views/yygh/hospset/form'),
+        meta: { title: '编辑医院设置', noCache: true },
+        hidden: true
+      }
+    ]
+  },
   {
     path: '/permission',
     component: Layout,
