@@ -131,14 +131,20 @@ export const asyncRoutes = [
   {
     path: '/yygh/hospset',
     component: Layout,
-    redirect: '/yygh/hospset/list',
+    redirect: '/yygh/hospset/pageList',
     name: 'hospset',
     meta: { title: '医院设置管理', icon: 'el-icon-s-management' },
     children: [
       {
-        path: 'list',
-        name: 'HospSetList',
+        path: 'allList',
+        name: 'HospSetAllList',
         component: () => import('@/views/yygh/hospset/list'),
+        meta: { title: '医院设置查询全部', icon: 'el-icon-search' }
+      },
+      {
+        path: 'pageList',
+        name: 'HospSetPageList',
+        component: () => import('@/views/yygh/hospset/list2'),
         meta: { title: '医院设置列表', icon: 'el-icon-search' }
       },
       {
@@ -149,6 +155,7 @@ export const asyncRoutes = [
       },
       // hidden: true  隐藏路由
       {
+        // 声明了一个id参数【形参】  对应修改医院设置页面<router-link :to="'/yygh/hospset/edit/'+scope.row.id">【实参】
         path: 'edit/:id',
         name: 'HospSetEdit',
         component: () => import('@/views/yygh/hospset/form'),
