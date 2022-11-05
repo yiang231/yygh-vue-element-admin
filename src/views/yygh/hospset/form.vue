@@ -24,7 +24,7 @@
       <el-form-item>
         <!--:disabled="saveBtnDisable"  前面带冒号：：：：：：：： true可以防止重复提交表单-->
         <el-button :disabled="saveBtnDisable" type="primary" @click="saveOrUpdate">保存</el-button>
-        <el-button>取消</el-button>
+        <el-button type="primary" @click="cancel">取消</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -52,6 +52,9 @@ export default {
     }
   },
   methods: {
+    cancel() {
+      this.$router.push({ path: '/yygh/hospset/pageList' })
+    },
     saveOrUpdate() {
       this.saveBtnDisable = true // 防止表单重复提交请求
       // 通过有没有id判断调用哪个方法

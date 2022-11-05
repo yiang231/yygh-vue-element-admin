@@ -29,7 +29,6 @@ export default {
     }
   },
   created() {
-    console.log('钩子方法执行')
     this.fetchData()
   },
   methods: {

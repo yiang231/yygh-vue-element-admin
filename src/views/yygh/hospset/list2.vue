@@ -50,10 +50,9 @@
         <template slot-scope="scope">
           <!--点击修改按钮触发编辑医院设置路由-->
           <router-link :to="'/yygh/hospset/edit/'+scope.row.id">
-            <el-button icon="el-icon-edit" size="mini" type="primary">修改</el-button>
+            <el-button circle icon="el-icon-edit" type="primary" />
           </router-link>
-          <el-button icon="el-icon-delete" size="mini" type="danger" @click="removeDataById(scope.row.id)">删除
-          </el-button>
+          <el-button circle icon="el-icon-delete" type="danger" @click="removeDataById(scope.row.id)" />
         </template>
       </el-table-column>
       <el-table-column align="center" label="锁定操作" width="200">
