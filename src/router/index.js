@@ -129,6 +129,22 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/yygh/cmn',
+    component: Layout,
+    redirect: '/yygh/cmn/dict',
+    name: 'cmn',
+    meta: { title: '数据字典管理', icon: 'el-icon-s-management' },
+    alwaysShow: true, // 只有一个子菜单时也会展示信息
+    children: [
+      {
+        path: 'dict',
+        name: 'dict',
+        component: () => import('@/views/yygh/cmn/dict'),
+        meta: { title: '数据字典列表', icon: 'el-icon-search' }
+      }
+    ]
+  },
+  {
     path: '/yygh/hospset',
     component: Layout,
     redirect: '/yygh/hospset/pageList',
