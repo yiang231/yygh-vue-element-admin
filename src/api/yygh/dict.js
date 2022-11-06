@@ -7,5 +7,11 @@ export default {
       url: `${dict_path}/findChildData/${id}`,
       method: 'get'
     })
+  },
+  importData() {
+    return request({
+      url: `${dict_path}/importData`,
+      method: 'post'
+    })
   }
 }
