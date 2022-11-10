@@ -31,7 +31,7 @@
 </template>
 <!--添加删除状态-->
 <script>
-import hospsetApi from '@/api/yygh/hospset'
+import hospsetApi from '@/api/yygh/HospSet'
 
 export default {
   data() {

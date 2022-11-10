@@ -13,5 +13,11 @@ export default {
       url: `${dict_path}/importData`,
       method: 'post'
     })
+  },
+  findByDictCode(dictCode) {
+    return request({
+      url: `${dict_path}/findByDictCode/${dictCode}`,
+      method: 'get'
+    })
   }
 }
