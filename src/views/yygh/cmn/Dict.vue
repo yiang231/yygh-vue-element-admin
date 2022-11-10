@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import dictApi from '@/api/yygh/dict'
+import dictApi from '@/api/yygh/Dict'
 
 export default {
   data() {

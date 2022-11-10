@@ -137,10 +137,33 @@ export const asyncRoutes = [
     alwaysShow: true, // 只有一个子菜单时也会展示信息
     children: [
       {
-        path: 'dict',
-        name: 'dict',
-        component: () => import('@/views/yygh/cmn/dict'),
+        path: 'Dict',
+        name: 'Dict',
+        component: () => import('@/views/yygh/cmn/Dict'),
         meta: { title: '数据字典列表', icon: 'el-icon-search' }
+      }
+    ]
+  },
+  {
+    path: '/yygh/hosp',
+    component: Layout,
+    redirect: '/yygh/hosp/HospList',
+    name: 'cmn',
+    meta: { title: '医院管理', icon: 'el-icon-s-management' },
+    alwaysShow: true, // 只有一个子菜单时也会展示信息
+    children: [
+      {
+        path: 'HospList',
+        name: 'HospList',
+        component: () => import('@/views/yygh/hosp/HospList'),
+        meta: { title: '医院列表', icon: 'el-icon-search' }
+      },
+      {
+        path: 'show/:id',
+        name: 'hospitalShow',
+        component: () => import('@/views/yygh/hosp/Show'),
+        meta: { title: '医院详情', noCache: true },
+        hidden: true
       }
     ]
   },
@@ -154,19 +177,19 @@ export const asyncRoutes = [
       {
         path: 'allList',
         name: 'HospSetAllList',
-        component: () => import('@/views/yygh/hospset/list'),
-        meta: { title: '医院设置查询全部', icon: 'el-icon-search' }
+        component: () => import('@/views/yygh/hospset/AllList'),
+        meta: { title: '医院设置列表', icon: 'el-icon-search' }
       },
       {
         path: 'pageList',
         name: 'HospSetPageList',
-        component: () => import('@/views/yygh/hospset/list2'),
-        meta: { title: '医院设置列表', icon: 'el-icon-search' }
+        component: () => import('@/views/yygh/hospset/PageList'),
+        meta: { title: '医院设置分页列表', icon: 'el-icon-search' }
       },
       {
         path: 'create',
         name: 'HospSetCreate',
-        component: () => import('@/views/yygh/hospset/form'),
+        component: () => import('@/views/yygh/hospset/Form'),
         meta: { title: '开通医院设置', icon: 'el-icon-finished' }
       },
       // hidden: true  隐藏路由
@@ -174,7 +197,7 @@ export const asyncRoutes = [
         // 声明了一个id参数【形参】  对应修改医院设置页面<router-link :to="'/yygh/hospset/edit/'+scope.row.id">【实参】
         path: 'edit/:id',
         name: 'HospSetEdit',
-        component: () => import('@/views/yygh/hospset/form'),
+        component: () => import('@/views/yygh/hospset/Form'),
         meta: { title: '编辑医院设置', noCache: true },
         hidden: true
       }

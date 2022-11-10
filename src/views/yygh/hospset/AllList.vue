@@ -18,7 +18,7 @@
 </template>
 <script>
 
-import hospsetApi from '@/api/yygh/hospset'
+import hospsetApi from '@/api/yygh/HospSet'
 
 // vue实例
 // vue脚本（js）
