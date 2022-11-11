@@ -164,6 +164,13 @@ export const asyncRoutes = [
         component: () => import('@/views/yygh/hosp/Show'),
         meta: { title: '医院详情', noCache: true },
         hidden: true
+      },
+      {
+        path: 'Schedule/:hoscode',
+        name: 'Schedule',
+        component: () => import('@/views/yygh/hosp/Schedule'),
+        meta: { title: '医院排班', noCache: true },
+        hidden: true
       }
     ]
   },

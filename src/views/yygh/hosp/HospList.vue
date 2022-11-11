@@ -53,7 +53,9 @@
           <router-link :to="'/yygh/hosp/Show/'+scope.row.id">
             <el-button type="primary">查看</el-button>
           </router-link>
-          <el-button type="primary">排班</el-button>
+          <router-link :to="'/yygh/hosp/Schedule/'+scope.row.hoscode">
+            <el-button type="primary">排班</el-button>
+          </router-link>
           <el-button v-if="scope.row.status===1" type="primary" @click="updateStatus(scope.row.id,0)">下线</el-button>
           <el-button v-if="scope.row.status===0" type="primary" @click="updateStatus(scope.row.id,1)">上线</el-button>
         </template>
