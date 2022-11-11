@@ -5,8 +5,8 @@ export default {
   pageList(page, limit, searchObj) {
     return request({
       url: `${hosp_path}/${page}/${limit}`,
-      method: 'post',
-      data: searchObj
+      method: 'post', // method: 'get' 后端使用FGetMapping且不加RequestBody参数注解
+      data: searchObj // params: searchObj
     })
   },
   updateStatus(id, status) {
