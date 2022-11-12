@@ -6,7 +6,7 @@
         <el-input v-model="hospset.hosname" />
       </el-form-item>
       <el-form-item label="医院编号">
-        <el-input v-model="hospset.hoscode" />
+        <el-input v-model="hospset.hoscode" disabled />
       </el-form-item>
       <el-form-item label="apiUrl">
         <el-input v-model="hospset.apiUrl" />

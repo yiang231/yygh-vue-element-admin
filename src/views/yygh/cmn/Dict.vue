@@ -25,7 +25,7 @@
       <el-form label-position="right" label-width="170px">
         <el-form-item label="数据字典">
           <el-upload
-            :action="'http://localhost:8202/admin/cmn/dict/importData'"
+            :action="'http://localhost/admin/cmn/dict/importData'"
             :multiple="false"
             :on-success="onUploadSuccess"
             class="upload-demo"
@@ -75,7 +75,7 @@ export default {
     // 数据字典导出 在浏览器中直接访问接口即可，是文件的话会自动弹出下载窗口 默认文件名【数据字典】
     exportData() {
       // 当前页打开链接
-      window.location = 'http://localhost:8202/admin/cmn/dict/exportData'
+      window.location = 'http://localhost/admin/cmn/dict/exportData'
       // 在新标签页中打开链接
       // window.open('http://localhost:8202/admin/cmn/dict/exportData', '_blank')
       // 在新窗口【弹出框】中打开链接
