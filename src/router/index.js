@@ -230,6 +230,12 @@ export const asyncRoutes = [
         component: () => import('@/views/yygh/user/userinfo/Show'),
         meta: { title: '用户列表', icon: 'table' },
         hidden: true
+      },
+      {
+        path: 'userinfo/AuthList',
+        name: '认证审批列表',
+        component: () => import('@/views/yygh/user/userinfo/AuthList'),
+        meta: { title: '认证审批列表', icon: 'table' }
       }
     ]
   },

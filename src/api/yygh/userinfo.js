@@ -21,5 +21,11 @@ export default {
       url: `${api_path}/show/${id}`,
       method: 'get'
     })
+  },
+  approval(userId, authStatus) {
+    return request({
+      url: `${api_path}/approval/${userId}/${authStatus}`,
+      method: 'get'
+    })
   }
 }
