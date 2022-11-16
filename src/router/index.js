@@ -148,7 +148,7 @@ export const asyncRoutes = [
     path: '/yygh/hosp',
     component: Layout,
     redirect: '/yygh/hosp/HospList',
-    name: 'cmn',
+    name: 'hosp',
     meta: { title: '医院管理', icon: 'el-icon-s-management' },
     alwaysShow: true, // 只有一个子菜单时也会展示信息
     children: [
@@ -206,6 +206,29 @@ export const asyncRoutes = [
         name: 'HospSetEdit',
         component: () => import('@/views/yygh/hospset/Form'),
         meta: { title: '编辑医院设置', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    redirect: '/user/userinfo/UserList',
+    name: 'userinfo',
+    meta: { title: '用户管理', icon: 'table' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'userinfo/UserList',
+        name: '用户列表',
+        component: () => import('@/views/yygh/user/userinfo/UserList'),
+        meta: { title: '用户列表', icon: 'table' }
+      },
+      {
+        path: 'userinfo/Show/:id',
+        name: '查看用户详情',
+        component: () => import('@/views/yygh/user/userinfo/Show'),
+        meta: { title: '用户列表', icon: 'table' },
         hidden: true
       }
     ]
