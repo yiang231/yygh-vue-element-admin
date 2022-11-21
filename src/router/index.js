@@ -240,6 +240,22 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/statistics',
+    component: Layout,
+    redirect: '/statistics/order/index',
+    name: 'BasesInfo',
+    meta: { title: '统计管理', icon: 'table' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'order/index',
+        name: '预约统计',
+        component: () => import('@/views/yygh/statistics/order/Index'),
+        meta: { title: '预约统计' }
+      }
+    ]
+  },
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',
